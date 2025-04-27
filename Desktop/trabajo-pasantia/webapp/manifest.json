@@ -116,6 +116,11 @@
                     "pattern": "detail/{invoicePath}",
                     "name": "detail",
                     "target": "detail"
+                },
+                {
+                    "pattern": "transaction",
+                    "name": "transaction",
+                    "target": "transaction"
                 }
             ],
             "targets": {
@@ -126,8 +131,11 @@
                 "detail": {
                     "viewId": "detail",
                     "viewName": "Detail"
+                },
+                "transaction": {
+                    "viewId": "transaction",
+                    "viewName": "Transaction"
                 }
-
             }
           
         },

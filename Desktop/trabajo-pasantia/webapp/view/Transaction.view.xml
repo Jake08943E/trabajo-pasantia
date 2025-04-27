@@ -1,0 +1,98 @@
+<mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.Transaction"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Page title="Gestion de Facturas">
+        <content>
+            <Panel headerText="Transaccion" expandable="true" expanded="true">
+                <f:SimpleForm
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    labelSpanXL="4"
+                    labelSpanL="4"
+                    labelSpanM="4"
+                    labelSpanS="12">
+                    <f:content>
+                        <Label text="Número de pedido:"/>
+                        <Input value="{/orderNumber}"/>
+                        
+                        <Label text="Fecha:"/>
+                        <DatePicker 
+                            value="{/date}"
+                            displayFormat="dd/MM/yyyy"/>
+                        
+                        <Label text="Monto:"/>
+                        <Input value="{/amount}"/>
+                        
+                        <Label text="Tipo de impuesto"/>
+                        <Select>
+                            <core:Item key="1" text="IVA"/>
+                            <core:Item key="2" text="ISR"/>
+                        </Select>
+
+                        <Label text="Moneda:"/>
+                        <Input value="{/currency}"/>
+                    </f:content>
+                </f:SimpleForm>
+            </Panel>
+
+            <Panel headerText="Posiciones (3)">
+                <Table items="{/positions}">
+                    <columns>
+                        <Column>
+                            <Text text="Document Number"/>
+                        </Column>
+                        <Column>
+                            <Text text="Company"/>
+                        </Column>
+                        <Column>
+                            <Text text="Contact Person"/>
+                        </Column>
+                        <Column>
+                            <Text text="Posting Date"/>
+                        </Column>
+                        <Column>
+                            <Text text="Monto"/>
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{documentNumber}"/>
+                                <Text text="{company}"/>
+                                <Text text="{contactPerson}"/>
+                                <Text text="{postingDate}"/>
+                                <ObjectNumber
+                                    number="{amount}"
+                                    unit="EUR"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </Panel>
+
+            <Panel>
+                <VBox class="sapUiSmallMargin">
+                    <HBox>
+                        <Label text="No. Pedido:" class="sapUiSmallMarginEnd"/>
+                        <Text text="243246634654"/>
+                    </HBox>
+                    <HBox>
+                        <Label text="Localidad:" class="sapUiSmallMarginEnd"/>
+                        <Text text="O&amp;M - Barahona"/>
+                    </HBox>
+                    <HBox>
+                        <Label text="Responsable:" class="sapUiSmallMarginEnd"/>
+                        <Text text="Mauricio Leon"/>
+                    </HBox>
+                    <HBox>
+                        <Label text="Comprador:" class="sapUiSmallMarginEnd"/>
+                        <Text text="German Vargas"/>
+                    </HBox>
+                </VBox>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

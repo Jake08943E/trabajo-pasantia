@@ -8,7 +8,11 @@ sap.ui.define([
         },
         onOpenDialog: function () {
             this.getOwnerComponent().openHelloDialog();
+        },
+        // Agregar esta nueva función
+        onNavToTransaction: function() {
+            var oRouter = this.getOwnerComponent().getRouter();
+            oRouter.navTo("transaction");
         }
-
     });
 });

@@ -17,6 +17,10 @@
         <Button 
             icon="sap-icon://hello-world"
             press=".onOpenDialog"/>
+        <Button 
+            text="Ir a Transacción"
+            press=".onNavToTransaction"
+            class="sapUiSmallMarginBegin"/>
     </headerContent>
     <content>
         <mvc:XMLView viewName="sap.ui.demo.walkthrough.view.HelloPanel"/>
